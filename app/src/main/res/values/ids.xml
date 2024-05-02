@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="editTextNombres" type="id"/>
+    <item name="editTextApellidos" type="id"/>
+    <item name="editTextDNI" type="id"/>
+    <item name="editTextCorreo" type="id"/>
+    <item name="editTextContraseña" type="id"/>
+    <item name="editTextRepetirContraseña" type="id"/>
+    <item name="editTextEspecialidad" type="id"/>
+    <item name="editTextExperiencia" type="id"/>
+</resources>
