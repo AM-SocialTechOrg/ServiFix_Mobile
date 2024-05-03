@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ServiFix_Mobile</string>
+    <string name="gender_prompt">Género</string>
 </resources>
