@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".LogInActivity"
+    android:orientation="vertical"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="@color/white"
+    android:gravity="center_vertical|center_horizontal">
+
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/circle_background" />
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="NAME USER"
+        android:textAlignment="center"
+        android:textColor="#747474"
+        android:textSize="14dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="especialidad"
+        android:textAlignment="center"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="12dp"
+        android:textColor="@color/light_gray"
+        android:layout_marginTop="-15dp"
+    />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginEnd="20dp"
+            >
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/icons"
+                android:layout_marginRight="8dp"
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                >
+                <TextView
+                    android:id="@+id/txtServices"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="16dp"
+                    android:textColor="#4D4D4D"
+                    android:layout_margin="3dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Servicios"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="16dp"
+                    android:textColor="#4D4D4D"
+                    android:layout_margin="8dp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+
+            >
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/icons"
+                android:layout_marginRight="8dp"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/txtRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="4.5"
+                    android:textAlignment="center"
+                    android:textColor="#4D4D4D"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calificaciones"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="16dp"
+                    android:textColor="#4D4D4D"
+                    android:layout_margin="8dp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>"
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet."
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="16dp"
+        android:textColor="#4D4D4D"
+        android:layout_margin="8dp"
+        android:background="@drawable/edit_text_border"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Horario: 1:00 pm + 6:00 pm"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="16dp"
+        android:textColor="#4D4D4D"
+        android:layout_margin="8dp"
+        android:background="@drawable/edit_text_border"
+        />
+
+
+    <Button
+        android:id="@+id/btnLogIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Editar perfil"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="18dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:backgroundTint="#747474"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Experiencia"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="18dp"
+            android:layout_margin="8dp"
+            android:backgroundTint="#747474"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Comentarios"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="18dp"
+            android:layout_margin="8dp"
+            android:backgroundTint="#747474"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        >
+
+    </LinearLayout>
+
+</LinearLayout>
