@@ -2,14 +2,19 @@ package com.example.servifix_mobile
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Spinner
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -22,28 +27,40 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.register)
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
-        val spinner: Spinner = findViewById(R.id.user_type_spinner)
+        val spinner1: Spinner = findViewById(R.id.user_type_spinner)
+        val spinner2: Spinner = findViewById(R.id.user_gender_spinner)
         val btnContinue: Button = findViewById(R.id.btnContinue)
+        val logInTextView: TextView = findViewById(R.id.txtLogIn)
 
-        val options = listOf("Cliente", "Técnico")
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, options)
+        val user_type_options = listOf("Cliente", "Técnico")
+        val user_type_adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, user_type_options)
+        user_type_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner1.adapter = user_type_adapter
 
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner.adapter = adapter
+        val user_gender_options = listOf("Masculino", "Femenino", "Otro", "Prefiero no decirlo")
+        val user_gender_adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, user_gender_options)
+        user_gender_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner2.adapter = user_gender_adapter
 
         // Establecer "Cliente" como opción por defecto
-        val defaultPosition = options.indexOf("Cliente")
-        spinner.setSelection(defaultPosition)
+        val defaultPosition = user_type_options.indexOf("Cliente")
+        spinner1.setSelection(defaultPosition)
 
         btnContinue.setOnClickListener {
-            val selectedPosition = spinner.selectedItemPosition
-            val selectedOption = spinner.adapter.getItem(selectedPosition) as String
+            val selectedPosition = spinner1.selectedItemPosition
+            val selectedOption = spinner1.adapter.getItem(selectedPosition) as String
 
             if (selectedOption == "Técnico") {
                 val intent = Intent(this, WorkerValidationActivity::class.java)
                 startActivity(intent)
             }
+        }
+
+        logInTextView.setOnClickListener {
+            val intent = Intent(this, LogInActivity::class.java)
+            startActivity(intent)
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
