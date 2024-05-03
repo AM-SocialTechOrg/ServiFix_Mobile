@@ -6,4 +6,5 @@
     <color name="light_blue">#67A1FF</color>
     <color name="text_color">#4D4D4D</color>
     <color name="light_gray">#A0A0A0</color>
+    <color name="disabled_button">#DFDFDF</color>
 </resources>

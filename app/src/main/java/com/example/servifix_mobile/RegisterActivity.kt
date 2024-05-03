@@ -14,6 +14,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Spinner
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -31,7 +32,7 @@ class RegisterActivity : AppCompatActivity() {
         val spinner1: Spinner = findViewById(R.id.user_type_spinner)
         val spinner2: Spinner = findViewById(R.id.user_gender_spinner)
         val btnContinue: Button = findViewById(R.id.btnContinue)
-
+        val logInTextView: TextView = findViewById(R.id.txtLogIn)
 
         val user_type_options = listOf("Cliente", "Técnico")
         val user_type_adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, user_type_options)
@@ -47,7 +48,6 @@ class RegisterActivity : AppCompatActivity() {
         val defaultPosition = user_type_options.indexOf("Cliente")
         spinner1.setSelection(defaultPosition)
 
-
         btnContinue.setOnClickListener {
             val selectedPosition = spinner1.selectedItemPosition
             val selectedOption = spinner1.adapter.getItem(selectedPosition) as String
@@ -56,6 +56,11 @@ class RegisterActivity : AppCompatActivity() {
                 val intent = Intent(this, WorkerValidationActivity::class.java)
                 startActivity(intent)
             }
+        }
+
+        logInTextView.setOnClickListener {
+            val intent = Intent(this, LogInActivity::class.java)
+            startActivity(intent)
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
