@@ -105,7 +105,7 @@
 
             <EditText
                 android:id="@+id/txtId"
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="52dp"
                 android:layout_weight="1"
                 android:hint="DNI"

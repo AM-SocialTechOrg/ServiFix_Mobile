@@ -35,8 +35,6 @@ class RegisterActivity : AppCompatActivity() {
 
         val spinner1: Spinner = findViewById(R.id.user_type_spinner)
         val spinner2: Spinner = findViewById(R.id.user_gender_spinner)
-        val btnContinue: Button = findViewById(R.id.btnContinue)
-        val logInTextView: TextView = findViewById(R.id.txtLogIn)
 
         //Spinners
         val user_type_options = listOf("Cliente", "Técnico")
@@ -53,31 +51,44 @@ class RegisterActivity : AppCompatActivity() {
         spinner1.setSelection(defaultPosition)
 
         //Botón continuar
+        val btnContinue: Button = findViewById(R.id.btnContinue)
+
         btnContinue.setOnClickListener {
             val selectedPosition = spinner1.selectedItemPosition
             val selectedOption = spinner1.adapter.getItem(selectedPosition) as String
 
+            val firstName = findViewById<EditText>(R.id.txtName).text.toString()
+            val lastName = findViewById<EditText>(R.id.txtLastname).text.toString()
+            val birthday = findViewById<TextView>(R.id.txtBirthdate).text.toString()
+            val gender = spinner2.selectedItem.toString()
+            val email = findViewById<EditText>(R.id.txtEmail).text.toString()
+            val password = findViewById<EditText>(R.id.txtPassword).text.toString()
+
             if (selectedOption == "Técnico") {
-                val intent = Intent(this, WorkerValidationActivity::class.java)
+                val intent = Intent(this, WorkerValidationActivity::class.java).apply {
+                    putExtra("firstName", firstName)
+                    putExtra("lastName", lastName)
+                    putExtra("birthday", birthday)
+                    putExtra("gender", gender)
+                    putExtra("email", email)
+                    putExtra("password", password)
+                }
                 startActivity(intent)
             } else {
-                val firstName = findViewById<EditText>(R.id.txtName).text.toString()
-                val lastName = findViewById<EditText>(R.id.txtLastname).text.toString()
-                val birthday = findViewById<TextView>(R.id.txtBirthdate).text.toString()
-                val gender = spinner2.selectedItem.toString()
-                val email = findViewById<EditText>(R.id.txtEmail).text.toString()
-                val password = findViewById<EditText>(R.id.txtPassword).text.toString()
                 val role = 1
                 Log.e("RegisterActivity", "firstName: $firstName, lastName: $lastName, birthday: $birthday, gender: $gender, email: $email, password: $password, role: $role")
                 LoginViewModel().register(firstName, lastName, gender, birthday, email, password, role)
             }
         }
 
+        //Redirección al login
+        val logInTextView: TextView = findViewById(R.id.txtLogIn)
         logInTextView.setOnClickListener {
             val intent = Intent(this, LogInActivity::class.java)
             startActivity(intent)
         }
 
+        //Cambiar estado del botón
         val textWatchers = listOf(
             findViewById<EditText>(R.id.txtName),
             findViewById<EditText>(R.id.txtLastname),
