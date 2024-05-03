@@ -87,6 +87,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/txtOlvidasteContraseña"
         android:text="¿Olvidaste tu contraseña?"
         android:textAlignment="center"
         android:fontFamily="@font/roboto_regular"
@@ -126,6 +127,64 @@
             android:layout_margin="3dp"
             />
 
+
+
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/forgotPasswordLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_gray"
+        android:visibility="gone"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/txtForgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Olvidaste tu contraseña?"
+            android:textColor="#67A1FF"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/txtForgotPasswordInstructions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ingresa tu correo electrónico para empezar con la verificación. Enviaremos un código de 4 números."
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtForgotPassword"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/txtEmailForgotPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Correo electrónico"
+            android:textColorHint="#A0A0A0"
+            android:padding="16dp"
+            android:background="@drawable/edit_text_border"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtForgotPasswordInstructions"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btnContinueForgotPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Continuar"
+            android:background="#DFDFDF"
+            android:textColor="#FFFFFF"
+            android:enabled="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtEmailForgotPassword"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </LinearLayout>

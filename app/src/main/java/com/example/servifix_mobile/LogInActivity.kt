@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -22,7 +23,9 @@ class LogInActivity : AppCompatActivity() {
     private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var logInButton: Button
-
+    private lateinit var forgotPasswordLayout: ConstraintLayout
+    private lateinit var txtEmailForgotPassword: EditText
+    private lateinit var btnContinueForgotPassword: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -30,10 +33,14 @@ class LogInActivity : AppCompatActivity() {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
         val registerTextView: TextView = findViewById(R.id.txtRegister)
+        val forgotPasswordTextView: TextView = findViewById(R.id.txtOlvidasteContraseña)
         emailEditText = findViewById(R.id.txtEmail)
         passwordEditText = findViewById(R.id.txtPassword)
         logInButton = findViewById(R.id.btnLogIn)
         logInButton.isEnabled = false
+        forgotPasswordLayout = findViewById(R.id.forgotPasswordLayout)
+        txtEmailForgotPassword = findViewById(R.id.txtEmailForgotPassword)
+        btnContinueForgotPassword = findViewById(R.id.btnContinueForgotPassword)
 
         emailEditText.addTextChangedListener(textWatcher)
         passwordEditText.addTextChangedListener(textWatcher)
@@ -41,6 +48,10 @@ class LogInActivity : AppCompatActivity() {
         registerTextView.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
+        }
+
+        forgotPasswordTextView.setOnClickListener {
+            showForgotPasswordLayout()
         }
 
         val btnLogIn: Button = findViewById(R.id.btnLogIn)
@@ -58,6 +69,11 @@ class LogInActivity : AppCompatActivity() {
         }
 
         textWatcher.afterTextChanged(null)
+    }
+
+    private fun showForgotPasswordLayout() {
+        forgotPasswordLayout.visibility = ConstraintLayout.VISIBLE
+        btnContinueForgotPassword.isEnabled = true
     }
 
     private val textWatcher = object : TextWatcher {
@@ -80,6 +96,7 @@ class LogInActivity : AppCompatActivity() {
             logInButton.backgroundTintList = ColorStateList.valueOf(backgroundColor)
 
         }
+
     }
 
 }
