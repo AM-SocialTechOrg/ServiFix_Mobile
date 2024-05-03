@@ -48,8 +48,10 @@ class LogInActivity : AppCompatActivity() {
             val email = findViewById<EditText>(R.id.txtEmail).text.toString()
             val password = findViewById<EditText>(R.id.txtPassword).text.toString()
             LoginViewModel().logIn(email, password)
+            //validar
+            val intent = Intent(this, profileTechnicalActivity::class.java)
+            startActivity(intent)
         }
-
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -81,5 +83,4 @@ class LogInActivity : AppCompatActivity() {
 
         }
     }
-
 }
