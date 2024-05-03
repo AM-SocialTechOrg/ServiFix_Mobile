@@ -75,12 +75,13 @@
             android:background="@drawable/edit_text_border"
             />
 
-        <EditText
+        <TextView
             android:id="@+id/txtBirthdate"
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:hint="Fecha de nacimiento"
             android:fontFamily="@font/roboto_regular"
+            android:textSize="18dp"
             android:padding="14dp"
             android:textColorHint="@color/light_gray"
             android:layout_marginTop="8dp"
@@ -89,7 +90,6 @@
             android:background="@drawable/edit_text_border"
             android:drawableRight="@drawable/baseline_calendar_today_24"
             android:inputType="date"
-
             />
 
         <LinearLayout
@@ -105,7 +105,7 @@
 
             <EditText
                 android:id="@+id/txtId"
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="52dp"
                 android:layout_weight="1"
                 android:hint="DNI"

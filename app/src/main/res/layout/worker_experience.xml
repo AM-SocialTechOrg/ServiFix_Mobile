@@ -54,8 +54,145 @@
         android:layout_marginTop="0dp"
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¡Estás a un paso de ser parte de ServiFix!"
+        android:textAlignment="center"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="16dp"
+        android:textColor="@color/light_blue"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Cuál es tu área de experiencia?"
+        android:textAlignment="center"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="14dp"
+        android:textColor="@color/text_color"
+        android:layout_marginTop="16dp"
+        />
 
+    <Spinner
+        android:id="@+id/job_area_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:padding="10dp"
+        android:background="@drawable/spinner_border"
+        android:spinnerMode="dropdown"
+        />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingresa tu periodo de experiencia en esta área"
+        android:textAlignment="center"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="14dp"
+        android:textColor="@color/text_color"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+
+        >
+
+        <EditText
+            android:id="@+id/txtPeriod"
+            android:layout_width="70dp"
+            android:layout_height="52dp"
+            android:layout_weight="1"
+            android:hint="0"
+            android:fontFamily="@font/roboto_regular"
+            android:padding="14dp"
+            android:layout_marginEnd="10dp"
+            android:textColorHint="@color/light_gray"
+            android:background="@drawable/edit_text_border"
+            android:inputType="number"
+            />
+
+        <Spinner
+            android:id="@+id/experience_period_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="52dp"
+            android:layout_weight="1"
+            android:padding="14dp"
+            android:background="@drawable/spinner_border"
+            android:spinnerMode="dropdown"
+            android:prompt="@string/gender_prompt"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Puedes añadir una breve descripción sobre tu experiencia:"
+        android:textAlignment="center"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="14dp"
+        android:textColor="@color/text_color"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        />
+
+    <EditText
+        android:id="@+id/txtExperience"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="3"
+        android:hint="Descripción"
+        android:fontFamily="@font/roboto_regular"
+        android:padding="14dp"
+        android:textColorHint="@color/light_gray"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/edit_text_border"
+        android:inputType="textEmailAddress"
+        />
+
+    <Button
+        android:id="@+id/btnContinue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Continuar"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="18dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"
+        android:backgroundTint="#1769FF"
+        />
+
+    <TextView
+        android:id="@+id/txtLogIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ya tengo una cuenta"
+        android:textAlignment="center"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="16dp"
+        android:textColor="#67A1FF"
+        android:layout_marginTop="16dp"
+        />
 
 </LinearLayout>
