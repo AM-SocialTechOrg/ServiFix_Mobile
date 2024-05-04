@@ -1,6 +1,8 @@
 package com.example.servifix_mobile.viewmodel
 
 import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.servifix_mobile.beans.LogInResponse
@@ -15,6 +17,10 @@ class LoginViewModel : ViewModel() {
     private val placeholderService = RetrofitClient.placeHolder
     var loginres: LogInResponse = LogInResponse("")
 
+    private val _token = MutableLiveData<String>()
+    val token: LiveData<String> get() = _token
+
+
     fun logIn(email: String, password: String) {
         val loginRequest = LoginRequest(email, password)
         Log.e("LoginViewModel", loginRequest.toString())
@@ -25,6 +31,7 @@ class LoginViewModel : ViewModel() {
             withContext(Dispatchers.Main) {
                 if(response!=null) {
                     loginres.token = response.data.token
+                    _token.value = response.data.token
                     Log.e("AuthViewModel", "res: ${response.data.token}")
                 }
 

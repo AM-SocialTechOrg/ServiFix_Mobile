@@ -52,6 +52,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
+        android:layout_marginTop="24dp"
         android:background="@drawable/circle_background"
         />
 
@@ -79,17 +80,17 @@
         />
 
     <LinearLayout
-        android:layout_width="374dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="16dp"
         android:orientation="horizontal"
-
         >
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginEnd="20dp"
+            android:layout_weight="1"
             android:background="@drawable/rounded_background"
             android:gravity="center_vertical"
             android:orientation="horizontal">
@@ -97,11 +98,11 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_marginRight="8dp"
+                android:layout_margin="8dp"
                 android:src="@drawable/baseline_build_24"/>
 
             <LinearLayout
-                android:layout_width="126dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
@@ -110,7 +111,7 @@
                     android:id="@+id/txtServices"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
+                    android:layout_marginTop="3dp"
                     android:fontFamily="@font/roboto_regular"
                     android:text="10"
                     android:textAlignment="center"
@@ -120,7 +121,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_marginBottom="8dp"
                     android:fontFamily="@font/roboto_regular"
                     android:text="Servicios"
                     android:textAlignment="center"
@@ -131,7 +132,8 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@drawable/rounded_background"
             android:gravity="center_vertical"
             android:orientation="horizontal">
@@ -139,11 +141,11 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_marginRight="8dp"
+                android:layout_margin="8dp"
                 android:src="@drawable/baseline_auto_awesome_24" />
 
             <LinearLayout
-                android:layout_width="192dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
@@ -151,7 +153,7 @@
                     android:id="@+id/txtRating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
+                    android:layout_marginTop="3dp"
                     android:fontFamily="@font/roboto_regular"
                     android:text="4.5"
                     android:textAlignment="center"
@@ -161,7 +163,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_marginBottom="8dp"
                     android:fontFamily="@font/roboto_regular"
                     android:text="Calificaciones"
                     android:textAlignment="center"
@@ -180,16 +182,7 @@
         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet."
         android:fontFamily="@font/roboto_regular"
         android:textSize="16dp"
-        android:textColor="#4D4D4D"
-        android:layout_margin="8dp"
-        android:background="@drawable/edit_text_border"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Horario: 1:00 pm  6:00 pm"
-        android:fontFamily="@font/roboto_regular"
-        android:textSize="16dp"
+        android:padding="16dp"
         android:textColor="#4D4D4D"
         android:layout_margin="8dp"
         android:background="@drawable/edit_text_border"
@@ -207,13 +200,17 @@
         android:layout_marginLeft="12dp"
         android:layout_marginRight="12dp"
         android:backgroundTint="#1769FF"
+        android:drawableLeft="@drawable/baseline_edit_square_24"
+
         />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginLeft="12dp"
         android:layout_marginRight="12dp"
+        android:layout_marginTop="24dp"
         >
         <Button
             android:layout_width="wrap_content"
@@ -234,6 +231,7 @@
             android:text="Comentarios"
             android:textSize="18dp" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
